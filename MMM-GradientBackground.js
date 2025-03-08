@@ -23,11 +23,9 @@ Module.register("MMM-GradientBackground", {
     start: function () {
         var self = this;
 
-        let top = document.querySelector("body > div.region.top.bar")
-        top.style.top = self.config.additionalTopMargin;
-
         self.wrapper = document.createElement("div");
         self.wrapper.className = "MMM-GradientBackground";
+        self.wrapper.id = self.config.uniqueName + "_wrapper";
 
         self.content = document.createElement("div");
         self.wrapper.appendChild(self.content);
@@ -130,6 +128,8 @@ Module.register("MMM-GradientBackground", {
 
     resume: function () {
         this.suspended = false
+        let top = document.querySelector("body > div.region.top.bar")
+        top.style.top = this.config.additionalTopMargin;
 
     },
 
