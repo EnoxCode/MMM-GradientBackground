@@ -2,7 +2,7 @@ Module.register("MMM-GradientBackground", {
     defaults: {
         width: "100%%",
         height: "100vh",
-        additionalTopMargin: 0,
+        additionalTopMargin: '0px',
         volume: 100,
         timers: [],
         // imagUrl: "modules/MMM-GradientBackground/tree-with-large-sun.jpg",
@@ -25,8 +25,6 @@ Module.register("MMM-GradientBackground", {
 
         let top = document.querySelector("body > div.region.top.bar")
         top.style.top = self.config.additionalTopMargin;
-        self.loadNextImageTimer = null;
-        self.imageIndex = -1;
 
         self.wrapper = document.createElement("div");
         self.wrapper.className = "MMM-GradientBackground";
